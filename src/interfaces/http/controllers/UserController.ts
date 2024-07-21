@@ -12,7 +12,7 @@ export class UserController {
 			await userService.createUser(email, password);
 			successResponse(res, "User created successfully", null, 201);
 		} catch (error) {
-			errorResponse(res, error);
+			errorResponse(res, 'Error creating user', error);
 		}
 	}
 
@@ -22,7 +22,7 @@ export class UserController {
 			const token = await userService.loginUser(email, password);
 			successResponse(res, "Login successful", { token });
 		} catch (error) {
-			errorResponse(res, error, 401);
+			errorResponse(res, 'Error login In',error, 400);
 		}
 	}
 }

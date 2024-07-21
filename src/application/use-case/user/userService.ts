@@ -27,7 +27,6 @@ export class UserService {
     if (!validPassword) {
       throw new Error('Invalid email or password');
     }
-
-    return jwt.sign({ email: user.email }, process.env.JWT_SECRET as string);
+    return jwt.sign({ userId: user._id }, process.env.JWT_SECRET as string);
   }
 }
