@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import { ContactRepository } from "../../../infrastructure/repositories/ContactRepository";
-import { ContactService } from "../../../application/use-case/user/contactService";
-import { errorResponse, successResponse } from "../utils/apiResponse";
+import { ContactRepository } from "../../../../infrastructure/repositories/ContactRepository";
+import { ContactService } from "../../../../application/use-case/contact/contact.service";
+import { errorResponse, successResponse } from "../../utils/apiResponse";
 import { Types } from "mongoose";
 
 interface AuthenticatedRequest extends Request {

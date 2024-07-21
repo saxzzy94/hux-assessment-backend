@@ -1,6 +1,6 @@
 import { Types } from "mongoose";
 import { Contact } from "../../domain/contact/Contact";
-import { ContactModel } from "../database/models/ContactModel";
+import { ContactModel } from "../database/models/contact.model";
 import { IContactRepository } from "../../domain/contact/IContactRepository";
 
 export class ContactRepository implements IContactRepository {

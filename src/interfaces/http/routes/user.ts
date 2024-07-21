@@ -1,5 +1,5 @@
 import express from "express";
-import { UserController } from "../controllers/UserController";
+import { UserController } from "../controllers/user/user.controller";
 import { body } from "express-validator";
 import { validate } from "../middleware/auth";
 

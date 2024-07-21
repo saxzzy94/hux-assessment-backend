@@ -1,7 +1,7 @@
 import express from "express";
 import { body } from "express-validator";
 import { validate, verifyToken } from "../middleware/auth";
-import { ContactController } from "../controllers/ContactController";
+import { ContactController } from "../controllers/contact/contact.controller";
 
 const router = express.Router();
 
@@ -30,20 +30,20 @@ const router = express.Router();
  *               $ref: '#/components/schemas/Contact'
  */
 router.post(
-  "/contacts",
-  verifyToken,
-  [
-    body("firstName")
-      .isString()
-      .isLength({ min: 2 })
-      .withMessage("First Name Should be more than 2 characters"),
-    body("lastName")
-      .isString()
-      .isLength({ min: 2 })
-      .withMessage("Last Name Should be more than 2 characters"),
-  ],
-  validate,
-  ContactController.create
+	"/contacts",
+	verifyToken,
+	[
+		body("firstName")
+			.isString()
+			.isLength({ min: 2 })
+			.withMessage("First Name Should be more than 2 characters"),
+		body("lastName")
+			.isString()
+			.isLength({ min: 2 })
+			.withMessage("Last Name Should be more than 2 characters"),
+	],
+	validate,
+	ContactController.create
 );
 
 /**
@@ -186,4 +186,3 @@ export default router;
  *           type: string
  *           description: The phone number of the contact
  */
-
