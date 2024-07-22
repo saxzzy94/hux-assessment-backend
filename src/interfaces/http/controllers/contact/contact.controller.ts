@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { ContactRepository } from "../../../../infrastructure/repositories/ContactRepository";
+import { ContactRepository } from "../../../../infrastructure/repositories/contact/ContactRepository";
 import { ContactService } from "../../../../application/use-case/contact/contact.service";
 import { errorResponse, successResponse } from "../../utils/apiResponse";
 import { Types } from "mongoose";

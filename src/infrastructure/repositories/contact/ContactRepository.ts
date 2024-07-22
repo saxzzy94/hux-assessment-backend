@@ -1,7 +1,7 @@
 import { Types } from "mongoose";
-import { Contact } from "../../domain/contact/Contact";
-import { ContactModel } from "../database/models/contact.model";
-import { IContactRepository } from "../../domain/contact/IContactRepository";
+import { Contact } from "../../../domain/contact/Contact";
+import { ContactModel } from "../../database/models/contact.model";
+import { IContactRepository } from "../user/IContactRepository";
 
 export class ContactRepository implements IContactRepository {
 	async findByUserId(userId: Types.ObjectId): Promise<Contact[]> {

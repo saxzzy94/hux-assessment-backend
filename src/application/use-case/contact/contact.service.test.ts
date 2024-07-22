@@ -1,7 +1,7 @@
 import { Types } from "mongoose";
 import { Contact } from "../../../domain/contact/Contact";
 import { ContactService } from "./contact.service";
-import { IContactRepository } from "../../../domain/contact/IContactRepository";
+import { IContactRepository } from "../../../infrastructure/repositories/user/IContactRepository";
 
 const mockContactRepository: IContactRepository = {
 	create: jest

@@ -1,5 +1,5 @@
 import { Types } from "mongoose";
-import { ContactRepository } from "../../../infrastructure/repositories/ContactRepository";
+import { ContactRepository } from "../../../infrastructure/repositories/contact/ContactRepository";
 import { Contact } from "../../../domain/contact/Contact";
 
 export class ContactService {

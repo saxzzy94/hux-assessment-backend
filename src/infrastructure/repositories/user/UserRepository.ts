@@ -1,6 +1,6 @@
-import { IUserRepository } from "../../domain/user/IUserRepository";
-import { User } from "../../domain/user/User";
-import { UserModel } from "../database/models/user.model";
+import { IUserRepository } from "../contact/IUserRepository";
+import { User } from "../../../domain/user/User";
+import { UserModel } from "../../database/models/user.model";
 
 export class UserRepository implements IUserRepository {
 	async findByEmail(email: string): Promise<User | null> {
@@ -10,7 +10,7 @@ export class UserRepository implements IUserRepository {
 
 	async findById(id: string): Promise<User | null> {
 		const user = await UserModel.findOne({ _id: id });
-		return user;
+		return user ? new User(user.email, user.password, user._id) : null
 	}
 
 	async create(user: User): Promise<void> {

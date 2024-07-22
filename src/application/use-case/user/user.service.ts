@@ -1,7 +1,7 @@
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { User } from "../../../domain/user/User";
-import { IUserRepository } from "../../../domain/user/IUserRepository";
+import { IUserRepository } from "../../../infrastructure/repositories/contact/IUserRepository";
 
 export class UserService {
 	constructor(private userRepository: IUserRepository) {}
@@ -32,9 +32,9 @@ export class UserService {
 
 	async loadUser(userId: string) {
 		const user = await this.userRepository.findById(userId);
-    if (!user) {
-      throw new Error("User not found");
-    }
+		if (!user) {
+			throw new Error("User not found");
+		}
 		// eslint-disable-next-line @typescript-eslint/no-unused-vars
 		const { password, ...rest } = user;
 		return rest;

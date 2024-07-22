@@ -162,7 +162,7 @@ router.post(
 router.get(
 	"/user",
 	verifyToken,
-	UserController.login
+	UserController.load
 );
 
 export default router;

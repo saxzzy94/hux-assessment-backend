@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { successResponse, errorResponse } from "../../utils/apiResponse";
 import { UserService } from "../../../../application/use-case/user/user.service";
-import { UserRepository } from "../../../../infrastructure/repositories/UserRepository";
+import { UserRepository } from "../../../../infrastructure/repositories/user/UserRepository";
 
 interface AuthenticatedRequest extends Request {
 	user?: {
