@@ -31,7 +31,7 @@ export const errorResponse = (
 		error instanceof Error ? error.message : "An unknown error occurred";
 	const response: ApiResponse<null> = {
 		success: false,
-		message,
+		message: errMessage,
 		error: errMessage,
 	};
 	res.status(statusCode).json(response);
