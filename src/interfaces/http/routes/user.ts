@@ -1,7 +1,7 @@
 import express from "express";
 import { UserController } from "../controllers/user/user.controller";
 import { body } from "express-validator";
-import { validate } from "../middleware/auth";
+import { validate, verifyToken } from "../middleware/auth";
 
 const router = express.Router();
 
@@ -156,6 +156,12 @@ router.post(
 			.withMessage("Password should be at least 6 chars long"),
 	],
 	validate,
+	UserController.login
+);
+
+router.get(
+	"/user",
+	verifyToken,
 	UserController.login
 );
 

@@ -3,6 +3,12 @@ import { successResponse, errorResponse } from "../../utils/apiResponse";
 import { UserService } from "../../../../application/use-case/user/user.service";
 import { UserRepository } from "../../../../infrastructure/repositories/UserRepository";
 
+interface AuthenticatedRequest extends Request {
+	user?: {
+		_id: string;
+	};
+}
+
 const userRepository = new UserRepository();
 const userService = new UserService(userRepository);
 export class UserController {
@@ -23,6 +29,19 @@ export class UserController {
 			successResponse(res, "Login successful", { token });
 		} catch (error) {
 			errorResponse(res, "Error login In", error, 400);
+		}
+	}
+
+	static async load(req: AuthenticatedRequest, res: Response): Promise<void> {
+		try {
+			const userId = req.user?._id;
+			if (!userId) {
+				throw new Error("Unauthorized! Please login");
+			}
+			const user = await userService.loadUser(userId);
+			successResponse(res, "Fetching User successful", { user });
+		} catch (error) {
+			errorResponse(res, "Error Fetching User", error, 400);
 		}
 	}
 }

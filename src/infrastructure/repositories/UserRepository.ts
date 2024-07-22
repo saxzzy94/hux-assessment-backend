@@ -8,6 +8,11 @@ export class UserRepository implements IUserRepository {
 		return user ? new User(user.email, user.password, user._id) : null;
 	}
 
+	async findById(id: string): Promise<User | null> {
+		const user = await UserModel.findOne({ _id: id });
+		return user;
+	}
+
 	async create(user: User): Promise<void> {
 		await UserModel.create(user);
 	}
