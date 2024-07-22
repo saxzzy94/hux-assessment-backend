@@ -21,6 +21,7 @@
   "homepage": "https://github.com/saxzzy94/hux-assessment-backend#readme",
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
+    "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
     "@types/jest": "^29.5.12",
     "@types/jsonwebtoken": "^9.0.6",
