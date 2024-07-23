@@ -54,7 +54,7 @@ The application exposes the following API endpoints:
 * POST /api/login - Login and receive a JWT token
 * POST /api/contacts - Create a new contact (requires authentication)
 * GET /api/contacts - Get all contacts for the authenticated user
-* PUT /api/contacts/:id - Update a specific contact
+* PATCH /api/contacts/:id - Update a specific contact
 * DELETE /api/contacts/:id - Delete a specific contact
 
 To use these endpoints, you'll need to include the JWT token in the Authorization header of your requests (except for signup and login).
