@@ -6,7 +6,7 @@ This is a Node.js application built with Express and MongoDB for managing contac
 
 Before you begin, ensure you have met the following requirements:
 
-* You have installed Node.js (version 14.x or later)
+* You have installed Node.js (version 18.x or later)
 * You have a MongoDB instance running (local or remote)
 * You have npm installed
 
